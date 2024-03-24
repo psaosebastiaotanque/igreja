@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v5.8.6, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="https://r.mobirisesite.com/308062/assets/images/braso-png-63x77.png?v=1RyLym" type="image/x-icon">
+  <link rel="shortcut icon" href="https://r.mobirisesite.com/308062/assets/images/braso-png-63x77.png?v=1ROqNe" type="image/x-icon">
   <meta name="description" content="">
   
   
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://r.mobirisesite.com/308062/assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-  <link rel="preload" as="style" href="https://r.mobirisesite.com/308062/assets/mobirise/css/mbr-additional.css?v=1RyLym"><link rel="stylesheet" href="https://r.mobirisesite.com/308062/assets/mobirise/css/mbr-additional.css?v=1RyLym" type="text/css">
+  <link rel="preload" as="style" href="https://r.mobirisesite.com/308062/assets/mobirise/css/mbr-additional.css?v=1ROqNe"><link rel="stylesheet" href="https://r.mobirisesite.com/308062/assets/mobirise/css/mbr-additional.css?v=1ROqNe" type="text/css">
 
   
   
@@ -31,10 +31,21 @@
 }
 #mobiriseBanner.container-banner {
   height: 8rem;
+  opacity: 1;
   -webkit-animation: 4s linear animationHeight;
   -moz-animation: 4s linear animationHeight;
     -o-animation: 4s linear animationHeight;
        animation: 4s linear animationHeight;
+       transition: all  0.5s;
+}
+#mobiriseBanner.container-banner.container-banner-closing {
+  pointer-events: none;
+  height: 0;
+  opacity: 0;
+  -webkit-animation: 0.5s linear animationClosing;
+  -moz-animation:  0.5s linear animationClosing;
+    -o-animation:  0.5s linear animationClosing;
+       animation:  0.5s linear animationClosing;
 }
 #mobiriseBanner .banner {
   min-height: 8rem;
@@ -81,6 +92,12 @@
 @-moz-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
 @-o-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
    @keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
+   
+@-webkit-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@-moz-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@-o-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+
 @media(max-width: 767px) {
   #mobiriseBanner.container-banner {
     height: 12rem;
@@ -96,67 +113,71 @@
   @-moz-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
   @-o-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
     @keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
+
+  @-webkit-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @-moz-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @-o-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
 }
 </style>
 </head>
 <body>
-
+<div class="container-banner" id="mobiriseBanner">
+  <div class="banner align-center">
+    <button type="button" onclick="document.getElementById('mobiriseBanner').classList.add('container-banner-closing')" class="btn-close" aria-label="Close" style="position: fixed;top: 16px;right: 16px;"></button>
+    <p class="mbr-text mbr-fonts-style display-7">The site was created with Mobirise Free <a href="https://mobirise.com/" class="mbr-black">Website Builder Software</a></p>
+    <div class="mbr-section-btn">
+      <a class="btn btn-sm btn-primary display-4" href="https://mobirise.com/">Create Your Website!</a>
+      <a class="btn btn-sm btn-secondary display-4" href="https://mobirise.com/p/?u=2947436&st=308062">Remove This Banner</a>
+    </div>
+  </div>
+</div>
   
   <section data-bs-version="5.1" class="slider4 mbr-embla cid-u0d5qPgSPo" id="slider4-43">
     
     
     <div class="position-relative text-center">
         <div class="mbr-section-head">
-            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Programação de Fevereiro 2024</strong></h4>
+            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Programação Semana Santa 2024</strong></h4>
             
         </div>
         <div class="embla mt-4" data-skip-snaps="true" data-align="center" data-contain-scroll="trimSnaps" data-auto-play-interval="5" data-draggable="true">
             <div class="embla__viewport container-fluid">
                 <div class="embla__container">
-                    <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
+                    <div class="embla__slide slider-image item active" style="margin-left: 1rem; margin-right: 1rem;">
                         <div class="slide-content">
                             <div class="item-wrapper">
                                 <div class="item-img">
-                                    <img src="https://r.mobirisesite.com/308062/assets/images/captura-de-tela-2024-02-10-081546-512x295.png?v=1RyLym" alt="Mobirise Website Builder">
+                                    <img src="https://r.mobirisesite.com/308062/assets/images/whatsapp-image-2024-03-24-at-13.14.55-512x512.jpg?v=1ROqNe" alt="Mobirise Website Builder" data-slide-to="0" data-bs-slide-to="0">
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div><div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
+                        <div class="slide-content">
+                            <div class="item-wrapper">
+                                <div class="item-img">
+                                    <img src="https://r.mobirisesite.com/308062/assets/images/whatsapp-image-2024-03-24-at-13.14.54-1-512x512.jpg?v=1ROqNe" alt="Mobirise Website Builder" data-slide-to="1" data-bs-slide-to="1">
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div><div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
+                        <div class="slide-content">
+                            <div class="item-wrapper">
+                                <div class="item-img">
+                                    <img src="https://r.mobirisesite.com/308062/assets/images/whatsapp-image-2024-03-24-at-13.14.54-512x512.jpg?v=1ROqNe" alt="Mobirise Website Builder" data-slide-to="2" data-bs-slide-to="2">
                                 </div>
                             </div>
                             
                             
                         </div>
                     </div>
-                    <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
-                        <div class="slide-content">
-                            <div class="item-wrapper">
-                                <div class="item-img">
-                                    <img src="https://r.mobirisesite.com/308062/assets/images/captura-de-tela-2024-02-10-081631-512x288.png?v=1RyLym" alt="Mobirise Website Builder">
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                    <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
-                        <div class="slide-content">
-                            <div class="item-wrapper">
-                                <div class="item-img">
-                                    <img src="https://r.mobirisesite.com/308062/assets/images/captura-de-tela-2024-02-10-081737-512x290.png?v=1RyLym" alt="Mobirise Website Builder">
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                    <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
-                        <div class="slide-content">
-                            <div class="item-wrapper">
-                                <div class="item-img">
-                                    <img src="https://r.mobirisesite.com/308062/assets/images/captura-de-tela-2024-02-10-081808-512x314.png?v=1RyLym" alt="Mobirise Website Builder">
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
+                    
+                    
+                    
                 </div>
             </div>
             <button class="embla__button embla__button--prev">
@@ -185,7 +206,7 @@
             </div>
         </div>
     </div>
-</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2947436" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/html-builder.html">HTML Creator</a></section><script src="https://r.mobirisesite.com/308062/assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="https://r.mobirisesite.com/308062/assets/smoothscroll/smooth-scroll.js"></script>  <script src="https://r.mobirisesite.com/308062/assets/ytplayer/index.js"></script>  <script src="https://r.mobirisesite.com/308062/assets/embla/embla.min.js"></script>  <script src="https://r.mobirisesite.com/308062/assets/embla/script.js"></script>  <script src="https://r.mobirisesite.com/308062/assets/theme/js/script.js"></script>  
+</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/2947436" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com"> Website Builder Software</a></section><script src="https://r.mobirisesite.com/308062/assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="https://r.mobirisesite.com/308062/assets/smoothscroll/smooth-scroll.js"></script>  <script src="https://r.mobirisesite.com/308062/assets/ytplayer/index.js"></script>  <script src="https://r.mobirisesite.com/308062/assets/embla/embla.min.js"></script>  <script src="https://r.mobirisesite.com/308062/assets/embla/script.js"></script>  <script src="https://r.mobirisesite.com/308062/assets/theme/js/script.js"></script>  
   
   
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
